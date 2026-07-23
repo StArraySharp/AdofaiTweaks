@@ -1,4 +1,5 @@
 using System.Reflection;
+using ADOFAI.SteamIntegration;
 using HarmonyLib;
 
 namespace AdofaiTweaks.Utils;
@@ -16,16 +17,16 @@ public static class SteamIntegrationChecker {
             return OldSteamIntegrationCheck();
         }
 
-        return SteamIntegration.initialized;
+        return SteamController.initialized;
     }
 
     private static readonly FieldInfo SteamIntegrationInstanceField =
-        AccessTools.Field(typeof(SteamIntegration), "Instance");
+        AccessTools.Field(typeof(SteamController), "Instance");
     private static readonly FieldInfo SteamIntegrationInitializedField =
-        AccessTools.Field(typeof(SteamIntegration), "initialized");
+        AccessTools.Field(typeof(SteamController), "initialized");
 
     private static bool OldSteamIntegrationCheck() {
-        var integration = (SteamIntegration)SteamIntegrationInstanceField.GetValue(null);
+        var integration = (SteamController)SteamIntegrationInstanceField.GetValue(null);
         if (integration == null) {
             return false;
         }

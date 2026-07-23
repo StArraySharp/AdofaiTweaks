@@ -1,4 +1,4 @@
-msbuild /p:Configuration=Release -m
+dotnet build -c Release
 cd AdofaiTweaks.Generator\bin\Release
 .\AdofaiTweaks.Generator.exe
 cd ..\..\..

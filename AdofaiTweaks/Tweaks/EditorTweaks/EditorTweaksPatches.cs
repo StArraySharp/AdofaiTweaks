@@ -107,7 +107,7 @@ internal static class EditorTweaksPatches
             displayFloor = editor.selectedFloors[0];
         }
 
-        displayFloor ??= editor.selectedFloors[^1];
+        displayFloor ??= editor.selectedFloors.Last();
 
         if (!displayFloor) {
             return;
@@ -164,7 +164,7 @@ internal static class EditorTweaksPatches
             }
 
             if (displayFloor == null || (displayFloor != null && !displayFloor.enabled)) {
-                displayFloor = editor.selectedFloors[^1];
+                displayFloor = editor.selectedFloors.Last();
             }
 
             if (displayFloor == null || (displayFloor != null && !displayFloor.enabled)) {

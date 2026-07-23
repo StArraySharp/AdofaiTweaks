@@ -441,3 +441,5 @@ credentials.json
 token.pickle
 /**/myenv
 /**/AdofaiTweaks.Strings.dll
+AdofaiTweaks/ExternalDependencies/ADOFAI/*.dll
+AdofaiTweaks/ExternalDependencies/ADOFAI/UnityModManager
